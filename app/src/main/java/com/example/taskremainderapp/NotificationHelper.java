@@ -56,7 +56,7 @@ public class NotificationHelper {
     public void sendNotification(String title, String message, boolean isHighPriority, String taskId) {
         String channelId = isHighPriority ? CHANNEL_ID_HIGH : CHANNEL_ID_LOW;
 
-        // Create an intent for TaskDetailsActivity
+        // i Create an intent for TaskDetailsActivity
         Intent intent = new Intent(context, TaskDetailsActivity.class);
         intent.putExtra("title", title);
         intent.putExtra("description", message);

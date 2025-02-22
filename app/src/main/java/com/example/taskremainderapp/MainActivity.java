@@ -46,14 +46,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Handle the splash screen transition
+        // i put here splash screen transition
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
-
 
 
         setContentView(R.layout.activity_main);
 
-        // Keep the splash screen visible for this Activity
+        // splash screen visibility
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             splashScreen.setKeepOnScreenCondition(() -> !isDataLoaded);
         }
@@ -70,15 +69,15 @@ public class MainActivity extends AppCompatActivity {
             requestNotificationPermission();
         }
 
-        // Use a ViewTreeObserver to detect when the layout is drawn
+        // detect when the layout is drawn
         final View content = findViewById(android.R.id.content);
         content.getViewTreeObserver().addOnPreDrawListener(
                 new ViewTreeObserver.OnPreDrawListener() {
                     @Override
                     public boolean onPreDraw() {
-                        // Check if the initial data is ready.
+                        // Checking if the initial data is ready.
                         if (isDataLoaded) {
-                            // The content is ready; start drawing.
+                            // The content is ready; start the app.
                             content.getViewTreeObserver().removeOnPreDrawListener(this);
                             return true;
                         } else {
@@ -183,7 +182,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        loadTasks(); // Refresh the task list when returning to the activity
+        loadTasks(); // i Refresh the task list when returning to the activity
     }
 }
 
