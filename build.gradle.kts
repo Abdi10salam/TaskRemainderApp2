@@ -2,4 +2,5 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     id("com.google.gms.google-services") version "4.4.2" apply false
+    id "org.sonarqube" version "4.0.0.2929" // Use the latest version
 }
